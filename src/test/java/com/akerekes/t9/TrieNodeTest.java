@@ -205,18 +205,6 @@ public class TrieNodeTest {
 	}
 
 	@Test
-	public void oneLetterPrefixAddedToTwoLetterNonTerminalNodeWithoutChildrenSplitsNode() {
-		TrieNode node = new TrieNode("ab");
-		node.makeNonTerminal();
-
-		node.addLetters("a");
-
-		assertNode(node, "a", true, 1);
-		TrieNode child = node.getChildren().iterator().next();
-		assertNode(child, "b", true, 0);
-	}
-
-	@Test
 	public void oneLetterPrefixAddedToTwoLetterTerminalNodeWithChildSplitsNodeReassignsChild() {
 		TrieNode node = new TrieNode("ab");
 		node.getChildren().add(new TrieNode("c"));
